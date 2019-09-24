@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="html">
+	<meta name="keyword" content="html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- important : the de responsive tren nhieu thiet bi -->
+	<link rel="stylesheet" type="text/css" href="site\font-awesome\css\font-awesome.css">
+	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"> <!-- duong dan den bootstrap onl-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="site/css/style.css"> <!-- luôn để cuối cùng-->
+</head>
+
+<body>
+<!-- feature general -->
+<!-- modal Login, Sign in -->
+<div class="container">	  
+		<!-- Modal đăng nhập -->
+		<div class="modal fade" id="logIn" role="dialog">
+			<div class="modal-dialog">			  
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="container">
+							<h4>Đăng Nhập!</h4>
+							<form action="/action_page.php">
+								<div class="form-group">
+								<label for="email">Email:</label>
+								<input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+								</div>
+								<div class="form-group">
+								<label for="pwd">Password:</label>
+								<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+								</div>
+								<div class="form-group form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox" name="remember"> Remember me
+								</label>
+								</div>
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</form>
+							</div>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>				
+			</div>
+		</div>
+		<!-- Modal đăng kí-->
+		<div class="modal fade" id="signIn" role="dialog">
+			<div class="modal-dialog">			  
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="container"> 
+							<div class="row"> 
+								<div class="col-12 col-sm-12 col-md-12 well well-sm col-md-offset-4"> 
+								<legend><a href="http://hocwebgiare.com/"><i class="glyphicon glyphicon-globe"></i></a> Đăng ký thành viên!
+								</legend> 
+								<form action="http://hocwebgiare.com" method="post" class="form" role="form"> 
+								<div class="row"> 
+								<div class="col-6 col-md-6"> <input class="form-control" name="firstname" placeholder="Họ" required="" autofocus="" type="text"> 
+								</div> 
+								<div class="col-6 col-md-6"> <input class="form-control" name="lastname" placeholder="Tên" required="" type="text"> 
+								</div> 
+								</div> <input class="form-control" name="youremail" placeholder="Email" type="email"> <input class="form-control" name="password" placeholder="Mật khẩu" type="password"> <input class="form-control" name="retypepassword" placeholder="Nhập lại mật khẩu" type="password"> <label for=""> Ngày sinh</label> 
+								<div class="row"> 
+								<div class="col-4 col-md-4"> <select class="form-control">              <option value="Day">Ngày</option>            </select> 
+								</div> 
+								<div class="col-4 col-md-4"> <select class="form-control">              <option value="Month">Tháng</option>            </select> 
+								</div> 
+								<div class="col-4 col-md-4"> <select class="form-control">              <option value="Year">Năm</option>            </select> 
+								</div> 
+								</div> <label class="radio-inline">          <input name="sex" id="inlineCheckbox1" value="male" type="radio">          Nam </label> <label class="radio-inline">          <input name="sex" id="inlineCheckbox2" value="female" type="radio">          Nữ </label> 
+								<br> 
+								<br> 
+								<button class="btn btn-lg btn-primary btn-block" type="submit"> Đăng ký</button> 
+								</form> 
+								</div> 
+							</div>
+							</div>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>				
+			</div>
+		</div>
+</div>
+<!-- end feature general -->
+<header>
+	<div class="container-fluid container-header">
+		<div class="row">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 header-logo-left">
+						<h5>Học viện Online Lize</h5>
+						<p>Tự học - Tự lập - Tự do</p>
+					</div>
+					<div class="col-sm-6 header-user">
+						<input type="text" class="text-search" placeholder="Nhập mã câu hỏi để tìm đáp án">
+						<i class="fa fa-search"></i>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#logIn">Đăng Nhập</button>
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#signIn">Đăng ký</button>
+					</div>
+				</div>
+			</div> 
+		</div>
+	</div> 
+	<div class="container-fluid container-header-menu">
+		<div class="row">
+			<div class="container">
+				<div class="row header-menu">
+					<nav class="navbar navbar-expand-lg navbar-light">
+					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					    <span class="navbar-toggler-icon"></span>
+					  </button>
+					  <div class="collapse navbar-collapse" id="navbarNav">
+					    <ul class="navbar-nav">
+							<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Ôn thi THPT QG
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="./learningStrategy.html">Chiến lược học tập</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Toán học</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Vật lý</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Hóa học</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Tiếng anh</a>
+									</div>
+							</li>
+							<li class="nav-item dropdown">		
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Tổng ôn
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="./learningStrategy.html">Chiến lược học tập</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Toán học</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Vật lý</a>
+									</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Lớp 11
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="./learningStrategy.html">Chiến lược học tập</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Toán học</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Vật lý</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Hóa học</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Tiếng anh</a>
+									</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Lớp 10
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="./learningStrategy.html">Chiến lược học tập</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Toán học</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Vật lý</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Hóa học</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="./addListlesson.html">Tiếng anh</a>
+									</div>
+							</li>
+							<li class="nav-item">
+							  <a class="nav-link" href="./practiceExam.html">Luyện đề</a>
+							</li>
+							<li class="nav-item">
+							  <a class="nav-link" href="./toeic.html">TOEIC</a>
+							</li>
+							<li class="nav-item">
+							  <a class="nav-link" href="./fee.html">Học Phí</a>
+							</li>
+							<li class="nav-item">
+							  <a class="nav-link" href="./lazeSchool.html">Trường học Lize</a>
+							</li>
+						  </ul>
+					  </div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<content>
+	<h2 style="text-align: center;font-size: 35px;">Mua khóa học</h2>
+	<div class="line-main" style="margin-bottom: 30px;"></div>
+	<div class="container">
+		<section>
+	        <div class="wizard">
+		        	<div class="row" style="background: #00a99d;height: 100px;">
+		        		<div class="container">
+		                	<ul class="nav nav-wizard step-panel">
+		                		<li class="step-css1 active" data-step="1"><a href="#step1" data-toggle="tab">BƯỚC 1: CHỌN KHÓA HỌC</a></li>
+		                    <li class="step-css2" data-step="2"><a href="#step2" data-toggle="tab">BƯỚC 2: NẠP TIỀN</a></li>
+		                    <li class="step-css3" data-step="3"><a href="#step3" data-toggle="tab">BƯỚC 3: THANH TOÁN</a></li>
+		                </ul>
+	                </div>
+	            </div>
+				<style>
+					.row-wallet-info .col-wallet-info:first-child {
+						width: 40%;
+						float: left;
+					}
+					.row-wallet-info .col-wallet-info:nth-child(2) {
+						width: 30%;
+						float: left;
+					}
+					#discount-move-panel .title_ {
+					    text-align: center;
+					    color: #5c5c5c;
+					    font-weight: bold;
+					}
+					#discount-move-panel .input_, 
+					#discount-move-panel .button_, 
+					#discount-move-panel .title_,
+					#discount-move-panel .error_ {
+						margin-bottom: 5px;
+					}
+					#discount-move-panel .input_ input::placeholder {
+						font-style: italic;
+					}
+					#discount-move-panel .input_ input {
+					    margin: 0 auto;
+					    display: block;
+					    border: 1px solid #ddd;
+					    border-color: #ddd;
+					    border-radius: 3px;
+					    padding: 5px 7px;
+					}
+					#discount-move-panel .button_ button {
+					    margin: 0 auto;
+					    display: block;
+					    border: 0;
+					    background: #4eaa9d;
+					    color: white;
+					    border-radius: 6px;
+					    padding: 5px 12px;
+					}
+					.row-wallet-info .col-wallet-info:last-child {
+						float: right;
+						width: 30%
+					}
+					.btn-next-step {
+						color: white;
+					}
+					.col-wallet-info_ .btn-next-step {
+						float: right;
+					}
+					#nav-type-purchase>li>a {
+					    border: 1px solid #00a99d;
+					    border-top-left-radius: 5px;
+					    border-top-right-radius: 5px;
+					}
+					#nav-type-purchase>li {
+						padding-left: 10px;
+						padding-right: 10px;
+					}
+					.notify_{
+					    padding: 20px;
+					    color: red;
+					    border-radius: 10px;
+				        max-width: 850px;
+					    margin: 0 auto;
+					    width: 100%;
+					    text-align: center;
+					    font-size: 20px;
+					    font-style: italic;
+				    }
+				    .title_ > * {
+				    		vertical-align: middle;
+				    }
+				    #discount-move-panel {
+				    		border: 1px solid #ddd;
+				    		padding: 10px;
+				    		padding-bottom: 4px;
+				    		height: 100px;
+				    }
+				    #btn-confirmBuy {
+				    margin-top: 30px;
+				    margin-bottom: 20px;
+				    }
+				    .course-item-details {
+				    height: 70px;
+				    margin-bottom: 7px !important;
+				    }
+				    .table-selected-info {
+				    margin-bottom: 5px;
+				    }
+				    #nav-type-purchase, #nav-type-buy {
+				    	padding-bottom: 0
+				    }
+				    #nav-type-purchase, #nav-type-buy {
+				    border-bottom: 0
+				    }
+				    ul#nav-type-buy li:first-child{
+					    margin-left:0;
+					    margin-right:8px
+					}
+					ul#nav-type-buy li:nth-child(4) {
+					    margin-left:0;
+					    margin-right:8px
+					}
+					#wallet-info-panel p {
+					margin-bottom: 0
+					}
+					#discount-move-panel .panel_dicount_ > * {
+					    display:  inline-block;
+					    vertical-align:  middle;
+					}
+					#btn-confirmBuy {
+					    padding: 7px 60px;
+					    border-radius: 100px;
+					    font-size: 20px;
+					}
+					.table-selected-info th {
+					    font-size: 18px;
+					}
+					.notify-bank {
+					    font-size: 18px;
+					    text-align: center;
+					    font-style: italic;
+					    color: #e91e63
+					}
+				</style>
+	            	<div class="container" style="margin-top: 5px;min-height: 330px;" id="content-scroll">
+	                <div class="tab-content">
+		                <div class="tab-pane active" id="step1">
+		                		<div class="row"></div>
+		                		<div class="row">
+		                			<div id="member-ship-selected-panel-tab-1" class="col-12 col-sm-10" style="display: none;"></div>
+		                			<div class="col-12 col-sm-2 next-step-style" style="padding-right: 23px;padding-left: 0">
+		                				<button style="margin-bottom: 20px;" onclick="goToStep(2)" class="btn-next-step btn-next-step-new">Bước tiếp theo <span><i class="fa fa-sign-out" aria-hidden="true"></i></span></button>
+		                			</div>
+		                		</div>
+		                		
+		                		<div id="intro_" style="margin: 0px 0px 25px;text-align: left;padding-left:  12px;font-style:  italic;display: none;">Chọn thêm khoá học để được giảm <span style="color:red" id="percent_">0%</span> giá gốc !</div>
+		                		<style>
+		                			.subject_new_style {
+								    border: 1px solid #00a99d;
+								    border-radius: 3px;
+								    display: flex;
+								    align-items: center;
+								    justify-content: center;
+								    height: 70px;
+								    font-weight: bold;
+								    color: #00a99d;
+								    cursor: pointer;
+								    text-align: center;
+								}
+								.subject_new_style.active, .subject_new_style:hover {
+								color: white;
+								background: #00a99d;
+								}
+		                		</style>
+	                        	<div class="row list-topic-select">
+								<div class="col-12 col-sm-2">
+	                       			<div id="group-10" class="subject_new_style" onclick="selectTopic(this, 10)">
+										<span class="subject_name_">LỚP 10</span>
+									</div>
+	                        		</div>
+	                        		<div class="col-12 col-sm-2">
+	                        			<div id="group-11" class="subject_new_style" onclick="selectTopic(this, 11)">
+										<span class="subject_name_">LỚP 11</span>
+									</div>
+	                        		</div>
+	                        		<div class="col-12 col-sm-2">
+	                        			<div id="group-12" class="subject_new_style active" onclick="selectTopic(this, 12)">
+										<span class="subject_name_">LỚP 12</span>
+									</div>
+	                        		</div>
+	                        		<div class="col-12 col-sm-2">
+	                        			<div id="group-13" class="subject_new_style" onclick="selectTopic(this, 13)">
+										<span class="subject_name_">TỔNG ÔN<br><span style="">(ÔN THI CẤP TỐC)</span></span>
+									</div>
+	                        		</div>
+	                        		<div class="col-12 col-sm-2">
+	                        			<div id="group-14" class="subject_new_style" onclick="selectTopic(this, 14)">
+										<span class="subject_name_">LUYỆN ĐỀ<br><span style="">(THI THỬ THPT QG)</span></span>
+									</div>
+	                        		</div>
+								<div class="col-12 col-sm-2">
+	                        			<div id="group-15" class="subject_new_style" onclick="selectTopic(this, 15)">
+										<span class="subject_name_">CHIẾN LƯỢC<br>HỌC TẬP</span>
+									</div>
+	                        		</div>
+							</div>
+                        		
+							<hr id="hr-scroll" style="background: #00a99d;height: 2.5px;border-radius: 5px;margin: 20px 0">
+							
+							<div class="tab-pane fade in active" id="content-orders"><table class="table table-bordered table-course-info"><tbody><tr><td class="course-item-style"><i class="icon icon-math_new"></i><span class="info_"><span class="nameSuper">SUPER TOÁN HỌC 2019</span><br><i class="price-hint">Ôn thi THPT Quốc Gia và TSĐH. Toàn bộ chương trình luyện thi Cơ bản và Nâng cao</i></span><span class="link-course-style"><a href="on-thi-toan-hoc-2019" target="_blank">Xem thêm</a></span></td><td class="price_"><p style="text-decoration: line-through;color: red;">499K</p><p></p><p>100K</p><p></p></td><td class="bought_"><button id="btn-member-ship-4862094843838464" style="display:block;margin:0 auto;" class="btn-buy" onclick="onSelectedMemberShip(this, 4862094843838464, 3)">Chọn</button></td></tr><tr><td class="course-item-style"><i class="icon icon-physics_new"></i><span class="info_"><span class="nameSuper">SUPER VẬT LÝ 2019</span><br><i class="price-hint">Ôn thi THPT Quốc Gia và TSĐH. Toàn bộ chương trình luyện thi Cơ bản và Nâng cao</i></span><span class="link-course-style"><a href="on-thi-vat-ly-2019" target="_blank">Xem thêm</a></span></td><td class="price_"><p style="text-decoration: line-through;color: red;">499K</p><p></p><p>100K</p><p></p></td><td class="bought_"><button id="btn-member-ship-5295818358128640" style="display:block;margin:0 auto;" class="btn-buy" onclick="onSelectedMemberShip(this, 5295818358128640, 3)">Chọn</button></td></tr><tr><td class="course-item-style"><i class="icon icon-chemist_new"></i><span class="info_"><span class="nameSuper">SUPER HOÁ HỌC 2019</span><br><i class="price-hint">Ôn thi THPT Quốc Gia và TSĐH. Toàn bộ chương trình luyện thi Cơ bản và Nâng cao</i></span><span class="link-course-style"><a href="on-thi-hoa-hoc-2019" target="_blank">Xem thêm</a></span></td><td class="price_"><p style="text-decoration: line-through;color: red;">499K</p><p></p><p>100K</p><p></p></td><td class="bought_"><button id="btn-member-ship-5928805940592640" style="display:block;margin:0 auto;" class="btn-buy" onclick="onSelectedMemberShip(this, 5928805940592640, 3)">Chọn</button></td></tr></tbody></table></div>
+	                    </div>
+	                    <div class="tab-pane" id="step2">
+	                    		<div class="row"></div>
+	                    		<div class="row-wallet-info row">
+							
+								<div class="col-12 col-sm-5" id="discount-parent-move-panel">
+									<div id="discount-move-panel" align="center">
+										<div class="title_"><img src="../images/coupon.png" style="margin: 5px;padding-right: 3px;"> <span>DÙNG MÃ GIẢM GIÁ</span></div>
+										<div class="panel_dicount_">
+											<div class="input_"><input id="discountInput" placeholder="Nhập mã giảm giá"></div>
+											<div class="button_"><button id="button-user-discount-code" class="buttonLoading" onclick="userDiscountCode(this)" data-text="Sử dụng" data-active="false" data-state="none"><div class="buttonLoading-text">Sử dụng</div><div class="buttonLoading-status"></div></button>
+										</div>
+										<div class="error_" id="discount-error-msg" style="color: red;"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-sm-2 col-wallet-info_">
+									<button type="button" class="btn-next-step btn-next-step-new" onclick="goToStep(3)">
+			                            	Bước tiếp theo <span><i class="fa fa-sign-out" aria-hidden="true"></i></span>
+		                            </button>
+								</div>
+							</div>
+							<div class="row"><hr style="margin: 20px 0px 0px 0px;"></div>
+							<ul class="nav-tabs" id="nav-type-purchase">
+								<li id="tabMobileCardPayment" class="col-12 col-sm-12 col-md-6 col-lg-6">
+									<a href="#telco" data-toggle="tab" id="tab-telco-item">
+										<i class="fa font-icon"></i>
+										<span>Thanh toán bằng thẻ điện thoại</span>
+						   			</a>
+						   		</li>
+						   		<li id="tabBankPayment" class="col-12 col-sm-12 col-md-6 col-lg-6 active">
+						   			<a href="#bank" data-toggle="tab" id="tab-bank-item">
+										<i class="fa font-icon"></i>
+										<span>Nộp học phí qua ngân hàng</span>
+						   			</a>
+								</li>
+							</ul>
+							  	<!-- Tab panes -->
+							<div class="tab-content row">
+							    <div class="tab-pane fade" id="telco">
+							    		<div class="notify_">
+							    			Xin lỗi các bạn ! Chức năng nạp thẻ đang bị tạm ngừng do dịch vụ nhà mạng bị gián đoạn.
+<!-- 							    			<br>Mời các bạn thanh toán chuyển khoản để được cộng thêm 10% số tiền. -->
+							    		</div>
+							    		<div class="row" style="display: none;">
+										<div class="col-12 col-sm-6 col-md-7 col-lg-7">
+											<h4>Hướng dẫn nạp thẻ điện thoại</h4>
+									    	<p>1. Nhập chính xác mã thẻ và seri. Nếu mã thẻ đúng, số seri sai thẻ sẽ không nạp được.</p>
+									    	<p>2. Nhập đúng định dạng của các loại thẻ theo mẫu dưới đây. Không điền thêm khoảng trắng, những ký tự gạch ngang...</p>
+											<table id="tb-card-info">
+												<tbody><tr><th></th>
+													<th>Viettel</th>
+													<th>Vinaphone</th>
+													<th>Mobifone</th></tr>
+												<tr><td>Mã</td>
+													<td>3212922961224</td>
+													<td>19720985477621</td>
+													<td>77050886133813</td></tr>
+												<tr><td>Seri</td>
+													<td>23120254896</td>
+													<td>32122152495</td>
+													<td>23120254896</td></tr>
+											</tbody></table>
+											<p>Chú ý: mã thẻ Mobifone và Vinaphone có thẻ 12 số hoặc 14 số.</p>
+											<p>3. Nạp thẻ thành công tài khoản sẽ được cộng tiền ngay lập tức</p>
+										</div>
+										<div class="col-12 col-sm-6 col-md-5 col-lg-5">
+											<p>Chọn loại thẻ</p>
+											<nav class="navbar" id="nav-network">
+												<ul class="nav navbar-nav nav-tabs nav-network" role="tablist" id="telco-tab">
+													<li role="tab" id="viettel" class="active" data-toggle="tab">
+														<div class="tab-item tab-lession"></div>
+													</li>
+													
+													<li role="tab" id="vinaphone" data-toggle="tab">
+														<div class="tab-item tab-lession"></div>
+													</li>
+													
+													<li role="tab" id="mobiphone" data-toggle="tab">
+														<div class="tab-item tab-lession"></div>
+													</li>
+												</ul>
+											</nav>
+											
+											<div class="input-card mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+												<input class="mdl-textfield__input" type="text" id="tb-seri">
+												<label class="mdl-textfield__label" for="nameInput">Nhập số seri <span class="color-red">(*)</span></label>
+											</div>
+											<div class="input-card mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield">
+												<input class="mdl-textfield__input" type="text" id="tb-code">
+												<label class="mdl-textfield__label" for="nameInput">Nhập mã thẻ <span class="color-red">(*)</span></label>
+											</div>
+											<!-- <button type="button" id="btn-payMoney" class="btn-main mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Nạp tiền</button> -->
+											<button id="btn-payMoney" class="buttonLoading btn-main mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-text="Nạp tiền" data-style="btn-main mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-state="none" data-upgraded=",MaterialButton,MaterialRipple"><div class="buttonLoading-text">Nạp tiền</div><div class="buttonLoading-status"></div><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+										</div>
+									</div>
+							    </div>
+							    <div class="tab-pane fade in active" id="bank">
+							    		<div class="col-12 notify-bank">
+							    			<div style="display:none">Số tiền cần chuyển/nộp vào tài khoản: <span id="money-bank_"></span> VNĐ</div>
+							    			<p>Cú pháp chuyển tiền: <i>Nop hoc phi cho tai khoan ... (Số điện thoại)</i></p>
+							    		</div>
+							    		<div class="bank-item col-sm-offset-3 col-12 col-sm-6">
+										<a href="#agb">
+											<img width="300px" src="../images/bidv.png" alt="bidv">
+											<br>
+											TMCP Đầu Tư và Phát Triển Việt Nam (BIDV)
+										</a>
+										<p>Chi nhánh Nam Hà Nội</p>
+										<p>Số tài khoản: 21310000703799</p>
+										<p>Chủ tài khoản: Nguyễn Mai Huệ</p>
+										<p>Nội dung chuyển khoản: Nop hoc phi cho tai khoan ... (Số điện thoại)</p>
+									</div>
+									<div class="col-12 notify-bank" style="margin-top: 30px;">
+							    			Sau khi chuyển tiền và được Lize cộng xu vào tài khoản, mời bạn quay lại trang Học Phí để mua khoá học.
+							    			<br>Trường hợp cần tư vấn, xin liên hệ qua số: 0962.414.073
+							    		</div>
+							    </div>
+							</div>
+	                    </div>
+	                    <div class="tab-pane" id="step3">
+	                    		<div class="row"></div>
+							<div class="co-12 col-sm-12 col-md-7 table-bill-style">
+								<div id="parent-wallet-info-panel-2" class="row"></div>
+								<div id="member-ship-selected-panel-tab-3" class="row"></div>
+							</div>
+							<div class="col-12 col-sm-12 col-md-5 table-bill-style">
+								<div id="discount-main-panel">
+								</div>
+								<button id="btn-confirmBuy" class="buttonLoading btn-main btn-pay" data-text="Thanh toán" data-style="btn-main btn-pay" data-state="none" onclick="purchase(this)"><div class="buttonLoading-text">Thanh toán</div><div class="buttonLoading-status"></div></button>
+							</div>
+	                        <hr>
+	                    </div>
+	                    <div class="clearfix"></div>
+	                </div>
+		        </div>
+	        </div>
+	    </section>
+	</div>
+</content>
+<script type="text/javascript">
+	var initAccountKit = false;
+	var currentUser = null;
+	jQuery(document).ready(function($) {
+		// show lixi 2018
+		if(false){
+			setTimeout(function(){
+				//TODO
+				showInfo('Chúc mừng năm mới !<br>Bạn đã được Lize Lì Xì 50xu nhân dịp năm mới<br>Lize chúc bạn một năm mới vui vẻ, hạnh phúc và thành công !');
+			}, 1000);
+		}
+		
+		// check user first use lize
+		
+		firstTimeUseLize(currentUser, function(){
+			setTimeout(function(){
+				openUpdateUserInfo();
+			}, 1000);
+		});
+		
+		$("#btn-fullRegister").click(function(){
+			if(!initAccountKit) {
+				initAccountKit = true;
+				AccountKit_OnInteractive = function(){
+					AccountKit.init({
+						appId:1494587197507036, 
+						state:"{{csrf}}", 
+						version:"v1.0"
+					  });
+				};
+				AccountKit_OnInteractive();
+			}
+		   
+				if($("#btn-fullRegister").data('update-facebook')){
+					completeRegisterFacebook('#form-register');
+				} else {
+					fullRegisterWithLize('#form-register');
+				}
+			
+			});
+		
+
+	
+		
+		
+		$('#login-success-modal').on('hidden.bs.modal', function () {
+			window.location.reload();
+		});
+		$('#login-modal').on('hidden.bs.modal', function () {
+			if($("#btn-fullRegister").data('update-facebook')){
+				window.location.reload();
+			}
+		});
+	});
+	var notCompleteUserInfoFromFacebook = null;
+	function completeRegisterFacebook(formSelector) {
+		var account = $(formSelector + " #tb-reg-account").val();
+		var phoneNumber = account;
+		var fullName = $(formSelector + " #tb-fullName").val();
+		var birthYear = "";
+		var province = -1;
+		var school = -1;
+		var email = "";
+		
+		console.log('completeRegisterFacebook', email, phoneNumber, fullName, birthYear, province, school);
+		
+		if(!account){
+			$(formSelector + " .form-error").html("Vui lòng nhập số điện thoại!");
+			return false;
+		}
+		if(!validPhone(account, "", "")) {
+			$(formSelector + " .form-error").html("Số điện thoại không hợp lệ!");
+			return false;
+		}
+		if(fullName && !checkSpecialCharacter(fullName)) {
+			$(formSelector + " .form-error").html("Họ và tên không được chứa kí tự đặc biệt.");
+			return false;
+		}
+		/*
+		if(province === '-1') {
+			$(formSelector + " .form-error").html('Vui lòng chọn tên thành phố !');
+			return false;
+		}
+		if(school === '-1') {
+			$(formSelector + " .form-error").html('Vui lòng chọn tên trường học !');
+			return false;
+		}
+		console.log((birthYear === '-1'));
+		if(birthYear === '-1') {
+			$(formSelector + " .form-error").html('Vui lòng chọn năm sinh !');
+			return false;
+		}
+		*/
+		console.log('notCompleteUserInfo', notCompleteUserInfoFromFacebook);
+		var valTemp = Cookies.get('resgisterFromPage');
+		if(typeof valTemp !== 'undefined'){
+			notCompleteUserInfoFromFacebook.affiliateId = valTemp;
+			Cookies.remove('resgisterFromPage');
+		}
+		var postData = {
+			'userId': notCompleteUserInfoFromFacebook.id,
+			'name': notCompleteUserInfoFromFacebook.name,
+			'gender':notCompleteUserInfoFromFacebook.gender,
+			'fullName': fullName,
+			'phone' : phoneNumber,
+			'birth' : birthYear,
+			'province' : province,
+			'school' : school,
+			'email' : notCompleteUserInfoFromFacebook.email,
+			'verifyPhoneNumber': false,
+			'affiliateId': notCompleteUserInfoFromFacebook.affiliateId,
+			};
+		updateStatusBtnLoading($(formSelector + " .buttonLoading"), "run");
+		$.post('/completeFacebookRegister',postData, function(data, status){
+				updateStatusBtnLoading($(formSelector + " .buttonLoading"), "success");
+			if(onUpdateInfoSuccessFacebook(formSelector, data) === 0) {
+					ga('send','event','Đăng Nhập Facebook','Đăng ký thành công');
+			};
+		});
+	}
+	
+	function showPopupLoginSuccess() {
+		$("#btn-fullRegister").data('update-facebook', false);
+		hideLoginPopup();
+		$('#login-success-modal').modal('toggle');
+		$('#count-hide').text('3');
+		setTimeout(function(){
+			$('#count-hide').text('2');
+		}, 1500);
+		setTimeout(function(){
+			$('#count-hide').text('1');
+		}, 2500);
+		setTimeout(function(){
+			$('#count-hide').text('0');
+			 $('#login-success-modal').modal('hide');
+		}, 3500);
+	}
+	function hideLoginPopup() {
+		$('#login-modal').modal('hide');
+	}
+	function showLoginPopupNew(msg) {
+		$('#login-modal').modal('toggle');
+		if(!!msg){
+			$('#login-modal #form-login-main .form-error_').html(msg);
+		}
+		$('.login-popup-panel a:first').tab('show');
+	}
+	function showSignUpPopup(msg){
+		$('#login-modal').modal('toggle');
+		if(!!msg){
+			$('#login-modal #form-register .form-error_').html(msg);
+		}
+		$('.login-popup-panel a:last').tab('show');
+	}
+	function showInfoFacebookToUpdate(fbData) {
+		if(!($("#login-modal").data('bs.modal') || {}).isShown){
+			$('#login-modal').modal('toggle');
+		}
+		notCompleteUserInfoFromFacebook = fbData;
+		console.log('showInfoFacebookToUpdate', fbData, fbData.mobilePhone);
+		var formSelector = "#form-register";
+		
+		$(formSelector + " #tb-reg-account").val(fbData.mobilePhone);
+		addFocus(formSelector + " #tb-reg-account", fbData.mobilePhone);
+		
+		$(formSelector + " #tb-reg-password").parent().hide();
+		
+		$(formSelector + " #tb-fullName").val(fbData.fullName);
+		addFocus(formSelector + " #tb-fullName", fbData.fullName);
+		
+		$('.login-popup-panel li').removeClass('active');
+		$('.login-popup-content-panel.tab-content .tab-pane').removeClass('active');
+		$('.login-popup-panel signUp').addClass('active');
+		$('.login-popup-content-panel.tab-content #signUp').addClass('active');
+		
+		$('.login-popup-panel').hide();
+		$('.update-title-panel').show();
+		$(formSelector + " .form-error").html("Cập nhật thông tin để hoàn thành đăng ký facebook!!!");
+		$("#btn-fullRegister").data('update-facebook', true);
+		$("#btn-fullRegister .buttonLoading-text").text('CẬP NHẬT');
+		$('#btn-registerFb-2').parent().hide();
+		$('.or-text_').hide();
+	}
+	
+	function addFocus(elem, value){
+		if(typeof value === 'number' && value >= 0){
+			$(elem).parent().addClass('is-focused');
+		}
+		if(typeof value === 'string' && value.trim().length > 0){
+			$(elem).parent().addClass('is-focused');
+		}
+	}
+	
+	function openUpdateUserInfo() {
+		console.log('openUpdateUserInfo()');
+		$('#update-user-info-modal').modal('toggle');
+	}
+	
+	function updateFullInfo(button){
+		console.log('currentUser', currentUser);
+		var formSelector = "#form-update";
+		
+		var phoneNumber = $(formSelector + " #tb-phone-update").val();
+		var birthYear = $(formSelector + " #lb-birthyear-update option:selected").val();
+		var province = $(formSelector + " #lb-province option:selected").val();
+		var school = $(formSelector + " #lb-school option:selected").val();
+		var email = $(formSelector + " #tb-email-update").val();
+		var fullName = $(formSelector + " #tb-fullName-update").val();
+		var displayName = fullName;
+		var patternEmail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		
+		if(!phoneNumber === "") {
+			showInfo("Bạn cần nhập số điện thoại để hoàn tất quá trình đăng ký");
+			return false;
+		}
+		if(!validPhone(phoneNumber, "", "")) {
+			$(formSelector + " #tb-phone-update").css("border-color", "red");
+			$(formSelector + " #tb-phone-update").css("color", "red");
+	// 	    	 setTimeout(function(){
+	// 	    		 $(formSelector + " #tb-phone-update").css("border-color", "rgba(147,157,166, 0.6)");
+	// 	        	 $(formSelector + " #tb-phone-update").css("color", "#7a7a7a");
+	// 	    	 }, 10000);
+			 $(formSelector + " #form-msg-update").html("Số điện thoại không hợp lệ.");
+			 return false;
+		}
+		
+		if(email === "") {
+			$(formSelector + " #tb-email-update").css("color", "red");
+	// 		setTimeout(function(){
+	// 			$(formSelector + " #tb-email-update").css("border-color", "rgba(147,157,166, 0.6)");
+	// 			$(formSelector + " #tb-email-update").css("color", "#7a7a7a");
+	// 		}, 10000);
+			$(formSelector + " #form-msg-update").html('Bạn chưa cập nhật đầy đủ thông tin!');
+			return false;
+		}
+		if(phoneNumber === ""){
+			$(formSelector + " #tb-phone-update").css("border-color", "red");
+			$(formSelector + " #tb-phone-update").css("color", "red");
+	// 		setTimeout(function(){
+	// 			$(formSelector + " #tb-phone-update").css("border-color", "rgba(147,157,166, 0.6)");
+	// 			$(formSelector + " #tb-phone-update").css("color", "#7a7a7a");
+	// 		}, 10000);
+			$(formSelector + " #form-msg-update").html('Bạn chưa cập nhật đầy đủ thông tin!');
+			return false;
+		}
+		if(!email.match(patternEmail)) {
+			$(formSelector + " #tb-email-update").css("border-color", "red");
+			$(formSelector + " #tb-email-update").css("color", "red");
+	// 		setTimeout(function(){
+	// 			$(formSelector + " #tb-email-update").css("border-color", "rgba(147,157,166, 0.6)");
+	// 			$(formSelector + " #tb-email-update").css("color", "#7a7a7a");
+	// 		}, 10000);
+			$(formSelector + " #form-msg-update").html('Địa chỉ email không hợp lệ !');
+			return false;
+		}
+		if(fullName === "") {
+			$(formSelector + " #form-msg").html('Vui lòng nhập họ tên !');
+			return false;
+		}
+		if(!checkSpecialCharacter(fullName)) {
+			$(formSelector + " #form-msg-update").html("Họ và tên không được chứa kí tự đặc biệt !");
+			return false;
+		}
+		if(typeof province === 'undefined' || province === '-1') {
+			$(formSelector + " #form-msg-update").html('Vui lòng chọn tên thành phố !');
+			return false;
+		}
+		if(typeof school === 'undefined' ||  school === '-1') {
+			$(formSelector + " #form-msg-update").html('Vui lòng chọn tên trường học !');
+			return false;
+		}
+		birthYear = parseInt(birthYear);
+		if(birthYear < 1900 || birthYear > 2010) {
+			$(formSelector + " #form-msg-update").html('Năm sinh không hợp lệ !');
+			return false;
+		}
+		updateStatusBtnLoading(button, "run");
+		var postData = {
+			'userId': currentUser.id,
+			'account': currentUser.account,
+			'password' : currentUser.password,
+			'name': (!!currentUser.name && currentUser.name.length > 0 ? currentUser.name : fullName),
+			'phone' : phoneNumber,
+			'birth' : birthYear,
+			'province' : province,
+			'school' : school,
+			'email' : email,
+			'fullName': fullName,
+			'targetCareer': "",
+			'targetSchool': "",
+			'verifyPhoneNumber': false
+		};
+		console.log('update', postData);
+		$.post('/update-userinfo',postData, function(data, status){
+			 console.log('on success: ', data);
+			 onUpdateInfoSuccess(formSelector, data, 'reload');
+		});
+	}
+	
+	function firstTimeUseLize(currentUser, callback){
+		
+		if(false && true){
+			if(!!currentUser && firstTimeUpdatedInfo(currentUser)){
+				$.post('/checkfirsttimeuselize', {userId: currentUser.id}, function(data){
+					(data == 1) && callback();
+				});
+			}
+		}
+	}
+	
+	function recoveryAccountCoincident(data){
+	// 	console.log('recoveryAccountCoincident', data);
+		$('#dialog-main').css('z-index', 9999999999);
+		showDialog("<span style='color:#00a99d'>Thông báo</span>", "<span style='color:red'>Thông báo số điện thoại của bạn đã được sử dụng để đăng ký trên Lize<br>Khôi phục tài khoản hoặc chọn số điện thoại khác để đăng ký tài khoản</span>", "Khôi phục tài khoản", "Đóng", function (){
+			window.location.href="/quen-mat-khau?name=" + data.mobilePhone + "&phone=" + data.mobilePhone;
+		}, function(){});
+	}
+	</script>
+<footer></footer>
+</body>
+</html>
